@@ -1,23 +1,21 @@
 <template>
-    <div>
-       <HeadLine/>
-        <Content/>
-    </div>
+  <div>
+    <HeadLine />
+    <Content />
+  </div>
 </template>
 
 <script>
-import HeadLine from '@/components/WraperComponents/HeadLine'
-import Content from '@/components/Layouts/Content'
+import HeadLine from "@/components/WraperComponents/HeadLine";
+import Content from "@/components/Layouts/Content";
 export default {
-name:"ContentWrapper",
-components:{
+  name: "ContentWrapper",
+  components: {
     Content,
     HeadLine
-}
-
-}
+  }
+};
 </script>
 
 <style>
-
 </style>

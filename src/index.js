@@ -1,9 +1,14 @@
-import Vue from 'vue'
-import App from './components/App.vue'
+import Vue from "vue";
+import App from "./components/App.vue";
+import Bootstrap from "bootstrap-vue";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-vue/dist/bootstrap-vue.css";
 
-Vue.config.productionTip = false
+Vue.use(Bootstrap);
+
+Vue.config.productionTip = false;
 
 new Vue({
-  el: '#app',
+  el: "#app",
   render: h => h(App)
-})
+});

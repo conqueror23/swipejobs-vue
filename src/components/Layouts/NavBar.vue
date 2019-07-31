@@ -33,11 +33,10 @@ export default {
 </script>
 
 <style>
-
-.navbar{
+.navbar {
   background: #34495e !important;
 }
-.navbar button{
+.navbar button {
   margin-left: 90%;
 }
 #a-svg {
