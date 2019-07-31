@@ -1,41 +1,50 @@
 <template>
-  <nav>
-    <nuxt-link to="/">Home</nuxt-link>
-    <nuxt-link to="/jobs">Jobs</nuxt-link>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      x="0px"
-      y="0px"
-      width="48"
-      height="48"
-      viewBox="0 0 24 24"
-      style=" fill:#000000;"
-    >
-      <path d="M2 11H22V13H2zM2 5H22V7H2zM2 17H22V19H2z" />
-    </svg>
-  </nav>
+  <b-navbar fixed toggleable="lg" type="dark" variant="info">
+    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+    <b-collapse id="nav-collapse" is-nav>
+      <b-navbar-nav>
+        <b-nav-item href="#">Link</b-nav-item>
+        <b-nav-item href="#" disabled>Comming Soon</b-nav-item>
+      </b-navbar-nav>
+      <!-- Right aligned nav items -->
+      <b-navbar-nav class="ml-auto">
+        <b-nav-item-dropdown text="Lang" right>
+          <b-dropdown-item href="#">EN</b-dropdown-item>
+          <b-dropdown-item href="#">ES</b-dropdown-item>
+          <b-dropdown-item href="#">RU</b-dropdown-item>
+          <b-dropdown-item href="#">FA</b-dropdown-item>
+        </b-nav-item-dropdown>
+        <b-nav-item-dropdown right>
+          <template slot="button-content">
+            <em>User</em>
+          </template>
+          <b-dropdown-item href="#">Profile</b-dropdown-item>
+          <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+        </b-nav-item-dropdown>
+      </b-navbar-nav>
+    </b-collapse>
+  </b-navbar>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "NavBar"
+};
 </script>
 
 <style>
-nav {
-  background: #34495e;
-  display: flex;
+
+.navbar{
+  background: #34495e !important;
 }
-nav a {
-  float: left;
-  padding: 1em 1em;
-  margin-left: 1em;
-  text-decoration: none;
-  background: red;
-  border-radius: 10%;
-}
-svg {
+.navbar button{
   margin-left: 90%;
+}
+#a-svg {
   float: right;
-  /* display: none; */
+  padding: 1em 1em;
+  margin-left: 90%;
+  text-decoration: none;
+  border-radius: 10%;
 }
 </style>

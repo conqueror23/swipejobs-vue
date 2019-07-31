@@ -1,39 +1,29 @@
 <template>
-  <div>
-    <b-card
-      title="Card Title"
-      img-src="https://picsum.photos/600/300/?image=25"
-      img-alt="Image"
-      img-top
-      tag="article"
-      style="max-width: 20rem;"
-      class="mb-2"
-    >
-      <hr />
-      <b-card-text>TimeTable</b-card-text>
-      <hr />
-      <b-card-text>location</b-card-text>
-      <hr />
-      <b-card-text>BranchInfo</b-card-text>
-      <hr />
-
-      <b-button href="#" variant="primary">No THANKS</b-button>
-      <b-button href="#" variant="primary">I`LL TAKE IT</b-button>
-    </b-card>
+  <div id="content">
+    <div v-for="job in JobsInfo">
+      <InfoCard v-bind:jobInfo="job" />
+    </div>
   </div>
 </template>
 
 <script>
+import JobsInfo from "@/assets/data";
 import InfoCard from "@/components/Layouts/InfoCard";
-import Warper from "@/components/Layouts/ContentWraper";
 export default {
   name: "Content",
   components: {
-    InfoCard,
-    Warper
+    InfoCard
+  },
+  data() {
+    return {
+      JobsInfo
+    };
   }
 };
 </script>
 
 <style>
+#content {
+  background: #bdc3c7;
+}
 </style>
