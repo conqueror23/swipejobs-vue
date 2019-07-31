@@ -18,8 +18,8 @@ export default {
 </script>
 
 <style>
-#content-wraper{
-    display: flex;
-    flex-direction: column;
+#content-wraper {
+  display: flex;
+  flex-direction: column;
 }
 </style>

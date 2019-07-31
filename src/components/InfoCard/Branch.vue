@@ -1,6 +1,6 @@
 <template>
   <div id="branch">
-    <h4>Branch</h4>
+    <h4>Branch:</h4>
     <h4>{{branch}}</h4>
     <a href>
       <h3>{{branchPhoneNumber}}</h3>
@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style>
-#branch a{
-    text-decoration: underline;
+#branch a {
+  text-decoration: underline;
 }
 </style>

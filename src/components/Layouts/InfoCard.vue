@@ -1,51 +1,49 @@
 <template>
   <b-container>
-
-  <b-card light tag="article" class="mb-6">
-    <b-row>
-      <b-col class="company-info">
-        <b-card-img :src="this.company.logo" ></b-card-img>
-      </b-col>
-      <b-col>
-        <b-card-text>
-          <h4>{{this.jobInfo.title}}</h4>
-          <h5 class="gray-font">{{this.company.name}}</h5>
-          <h5 class="gray-font">${{hourRate}}/hour</h5>
-          <!-- use moment().unix() to get the mimimun and maximun day or just  -->
-          <h4 class="gray-font">{{workPeriod}}</h4>
-        </b-card-text>
-      </b-col>
-    </b-row>
-    <b-card-text>
-      <ShiftTable :formatDate="this.formatDate" />
-    </b-card-text>
-    <hr />
-    <b-card-text>
+    <b-card light tag="article" class="mb-6">
       <b-row>
-        <b-col class="company-location">
-          <Location v-bind:address="this.company.address" />
+        <b-col class="company-info">
+          <b-card-img :src="this.company.logo"></b-card-img>
+        </b-col>
+        <b-col>
+          <b-card-text>
+            <h4>{{this.jobInfo.title}}</h4>
+            <h5 class="gray-font">{{this.company.name}}</h5>
+            <h5 class="gray-font">${{hourRate}}/hour</h5>
+            <h4 class="gray-font">{{workPeriod}}</h4>
+          </b-card-text>
         </b-col>
       </b-row>
-    </b-card-text>
-    <hr />
-    <b-card-text>
+      <b-card-text>
+        <ShiftTable :formatDate="this.formatDate" />
+      </b-card-text>
+      <hr />
+      <b-card-text>
+        <b-row>
+          <b-col class="company-location">
+            <Location v-bind:address="this.company.address" />
+          </b-col>
+        </b-row>
+      </b-card-text>
+      <hr />
+      <b-card-text>
+        <b-row>
+          <b-col class="company-branch">
+            <Branch
+              v-bind:branch="this.jobInfo.branch"
+              v-bind:branchPhoneNumber="this.jobInfo.branchPhoneNumber"
+            />
+          </b-col>
+        </b-row>
+      </b-card-text>
+      <hr />
       <b-row>
-        <b-col class="company-branch">
-          <Branch
-            v-bind:branch="this.jobInfo.branch"
-            v-bind:branchPhoneNumber="this.jobInfo.branchPhoneNumber"
-          />
+        <b-col class="company-buttons">
+          <a href="#">THANKS</a>
+          <a href="#">I`LL TAKE IT</a>
         </b-col>
       </b-row>
-    </b-card-text>
-    <hr />
-    <b-row>
-      <b-col class="company-buttons">
-        <a href='#'> THANKS</a>
-        <a href='#'>I`LL TAKE IT</a>
-      </b-col>
-    </b-row>
-  </b-card>
+    </b-card>
   </b-container>
 </template>
 
@@ -101,8 +99,9 @@ export default {
   margin: 0 1em !important;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 }
-.card img{
+.card img {
   width: 100%;
 }
 .company-info {
@@ -111,6 +110,10 @@ export default {
 }
 .company-info .card-text {
   margin-left: 2em;
+}
+.company-info h5{
+  line-height: 1em;
+  
 }
 .company-buttons {
   display: inline-flex;

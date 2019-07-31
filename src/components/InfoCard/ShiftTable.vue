@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h3>If you take this job you are agreeing to work ALL DAYS</h3>
-    <div v-for="day in weekshift">
-      <p class="gray-font">{{day}}</p>
+    <h3>If you take this job you are agreeing to work ALL DAYS.</h3>
+    <div :key="day" v-for="day in weekshift">
+      <p id="week-shift" class="gray-font">{{day}}</p>
     </div>
   </div>
 </template>
@@ -32,4 +32,6 @@ export default {
 </script>
 
 <style>
+
+
 </style>

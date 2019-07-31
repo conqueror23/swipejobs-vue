@@ -1,10 +1,9 @@
 <template>
   <div id="location">
     <h3>Location</h3>
-    <a href="#" ><h3>
-        {{address}}
-        </h3>
-        </a>
+    <a href="#">
+      <h3>{{address}}</h3>
+    </a>
   </div>
 </template>
 
@@ -16,9 +15,7 @@ export default {
 </script>
 
 <style>
-#location a{
-    text-decoration: underline;
-
+#location a {
+  text-decoration: underline;
 }
-
 </style>

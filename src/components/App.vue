@@ -29,19 +29,19 @@ export default {
 .bold {
   font-weight: bold;
 }
-@media screen and (min-width: 1024px){
-  .card img{
-    width: 60%!important;
+@media screen and (min-width: 1024px) {
+  .card {
+    flex: 60%;
+    justify-content: center;
   }
-  @media screen and (max-width: 540px) and( min-width: 276px){
-    .card img{
+  .card img {
+    width: 60% !important;
+  }
+  @media screen and (max-width: 540px) and( min-width: 276px) {
+    .card img {
       width: 40%;
       height: 40%;
-
     }
-    
   }
-  
 }
-
 </style>
