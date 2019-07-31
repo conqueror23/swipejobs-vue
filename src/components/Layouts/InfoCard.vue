@@ -61,7 +61,6 @@ export default {
     Branch,
     Location,
     ShiftTable,
-    formattedDate: ""
   },
   data() {
     return {
@@ -76,7 +75,6 @@ export default {
     },
     formatDate: function() {
       let formatedDate = this.jobInfo.shifts.map(value => {
-        //get the weekdays
         let output = moment(value.startDate)
           .tz("America/Los_Angeles")
           .add(18, "h");
@@ -101,9 +99,7 @@ export default {
   flex-direction: column;
   flex-wrap: wrap;
 }
-.card img {
-  width: 100%;
-}
+
 .company-info {
   display: flex;
   justify-content: space-evenly;
@@ -111,9 +107,8 @@ export default {
 .company-info .card-text {
   margin-left: 2em;
 }
-.company-info h5{
+.company-info h5 {
   line-height: 1em;
-  
 }
 .company-buttons {
   display: inline-flex;

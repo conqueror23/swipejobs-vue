@@ -1,14 +1,14 @@
 <template>
   <div id="HeadLine">
     <div>
-      <p>Jobs Available</p>
+      <h4>Jobs Available</h4>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "HeadLines"
+  name: "HeadLines",
 };
 </script>
 
@@ -22,8 +22,9 @@ export default {
   display: flex;
   background: #0984e3;
   padding: 0.2em 0.8em;
+  margin-left: 10%;
 }
-#HeadLine p {
+#HeadLine h4 {
   color: whitesmoke;
   font-weight: 600;
 }
