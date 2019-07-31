@@ -65,7 +65,6 @@ export default {
   data() {
     return {
       company: this.jobInfo.company,
-      shifts: this.jobInfo.shifts
     };
   },
   computed: {

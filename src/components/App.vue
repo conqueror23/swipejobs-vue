@@ -47,6 +47,9 @@ export default {
   p {
     font-size: 0.3em;
   }
+  .company-buttons {
+    font-size: 0.5em;
+  }
 }
 @media screen and (max-width: 410px) and (min-width: 270px) {
   h3 {
