@@ -1,16 +1,16 @@
 <template>
   <b-container>
-    <b-card light tag="article" class="mb-6">
+    <b-card light tag="article" >
       <b-row>
         <b-col class="company-info">
           <b-card-img :src="this.company.logo"></b-card-img>
         </b-col>
-        <b-col>
+        <b-col col='2'>
           <b-card-text>
             <h4>{{this.jobInfo.title}}</h4>
             <h5 class="gray-font">{{this.company.name}}</h5>
             <h5 class="gray-font">${{hourRate}}/hour</h5>
-            <h4 class="gray-font">{{workPeriod}}</h4>
+            <h4 class="gray-font bold">{{workPeriod}}</h4>
           </b-card-text>
         </b-col>
       </b-row>
@@ -70,8 +70,14 @@ export default {
   },
   computed: {
     hourRate: function() {
-      let hourrate = this.jobInfo.wagePerHourInCents / 100;
-      return hourrate.toFixed(2);
+      let hourRate = this.jobInfo.wagePerHourInCents / 100;
+      return hourRate.toFixed(2);
+    },
+     workPeriod: function() {
+      let firstDay = this.formatDate[0].format("ddd,  MMM D");
+      let length = this.formatDate.length - 1;
+      let lastDay = this.formatDate[length].format("ddd,  MMM D");
+      return firstDay + " - " + lastDay;
     },
     formatDate: function() {
       let formatedDate = this.jobInfo.shifts.map(value => {
@@ -82,30 +88,19 @@ export default {
       });
       return formatedDate;
     },
-    workPeriod: function() {
-      let period = this.formatDate[0].format("ddd,  MMM D");
-      let length = this.formatDate.length - 1;
-      let lastDay = this.formatDate[length].format("ddd,  MMM D");
-      return period + " - " + lastDay;
-    }
+   
   }
 };
 </script>
 
 <style>
-.card {
-  margin: 0 1em !important;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
 
 .company-info {
   display: flex;
   justify-content: space-evenly;
 }
 .company-info .card-text {
-  margin-left: 2em;
+  margin-left: 10%;
 }
 .company-info h5 {
   line-height: 1em;

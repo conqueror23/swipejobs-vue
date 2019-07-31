@@ -37,7 +37,7 @@ export default {
   background: #34495e !important;
 }
 .navbar button {
-  margin-left: 90%;
+  margin-left: 80%;
 }
 #a-svg {
   float: right;

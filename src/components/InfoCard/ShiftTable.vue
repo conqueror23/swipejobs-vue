@@ -1,15 +1,17 @@
 <template>
   <div>
     <h3>If you take this job you are agreeing to work ALL DAYS.</h3>
-    <div :key="day" v-for="day in weekshift">
-      <p id="week-shift" class="gray-font">{{day}}</p>
-    </div>
+    <table id="shift-table" :key="day" v-for="day in weekshift">
+      <tr>
+        <td v-for="attr in day.split(' ')" :key="attr">
+          <p id="week-shift" class="gray-font">{{attr}}</p>
+        </td>
+      </tr>
+    </table>
   </div>
 </template>
 
 <script>
-import moment, { weekdays } from "moment";
-import moment_timezone from "moment-timezone";
 
 export default {
   name: "shiftTables",
@@ -32,6 +34,18 @@ export default {
 </script>
 
 <style>
+#shift-table {
+  margin: 0 0.2em;
+}
+#shift-table table td {
+  height: 0.7em;
+  padding: 0.2em;
+  align-content: right;
+  text-align: right;
+}
 
-
+#week-shift {
+  line-height: 0.7em;
+  font-size: 1.2em;
+}
 </style>
