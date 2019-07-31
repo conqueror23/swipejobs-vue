@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="content-wraper">
     <HeadLine />
     <Content />
   </div>
@@ -18,4 +18,8 @@ export default {
 </script>
 
 <style>
+#content-wraper{
+    display: flex;
+    flex-direction: column;
+}
 </style>

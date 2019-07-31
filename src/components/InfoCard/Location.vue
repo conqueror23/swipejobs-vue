@@ -1,7 +1,10 @@
 <template>
   <div id="location">
     <h3>Location</h3>
-    <a href="#">{{address}}</a>
+    <a href="#" ><h3>
+        {{address}}
+        </h3>
+        </a>
   </div>
 </template>
 
@@ -14,7 +17,6 @@ export default {
 
 <style>
 #location a{
-    font-size: 2em;
     text-decoration: underline;
 
 }

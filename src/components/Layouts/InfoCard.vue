@@ -1,14 +1,18 @@
 <template>
+  <b-container>
+
   <b-card light tag="article" class="mb-6">
     <b-row>
       <b-col class="company-info">
-        <b-card-img :src="this.company.logo"></b-card-img>
+        <b-card-img :src="this.company.logo" ></b-card-img>
+      </b-col>
+      <b-col>
         <b-card-text>
-          <h3>{{this.jobInfo.title}}</h3>
-          <h4>{{this.company.name}}</h4>
-          <p>${{hourRate}}/hour</p>
+          <h4>{{this.jobInfo.title}}</h4>
+          <h5 class="gray-font">{{this.company.name}}</h5>
+          <h5 class="gray-font">${{hourRate}}/hour</h5>
           <!-- use moment().unix() to get the mimimun and maximun day or just  -->
-          <p>{{workPeriod}}</p>
+          <h4 class="gray-font">{{workPeriod}}</h4>
         </b-card-text>
       </b-col>
     </b-row>
@@ -37,11 +41,12 @@
     <hr />
     <b-row>
       <b-col class="company-buttons">
-        <b-button href="#" variant="primary">No THANKS</b-button>
-        <b-button href="#" variant="primary">I`LL TAKE IT</b-button>
+        <a href='#'> THANKS</a>
+        <a href='#'>I`LL TAKE IT</a>
       </b-col>
     </b-row>
   </b-card>
+  </b-container>
 </template>
 
 <script>
@@ -92,18 +97,24 @@ export default {
 </script>
 
 <style>
-b-card img {
-  width: 20%;
-  height: 20%;
+.card {
+  margin: 0 1em !important;
+  display: flex;
+  flex-direction: column;
+}
+.card img{
+  width: 100%;
 }
 .company-info {
   display: flex;
+  justify-content: space-evenly;
 }
 .company-info .card-text {
   margin-left: 2em;
 }
 .company-buttons {
   display: inline-flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  padding: 1em 1em;
 }
 </style>

@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h2>If you take this job you are agreeing to work ALL DAYS</h2>
+    <h3>If you take this job you are agreeing to work ALL DAYS</h3>
     <div v-for="day in weekshift">
-      <p>{{day}}</p>
+      <p class="gray-font">{{day}}</p>
     </div>
   </div>
 </template>
