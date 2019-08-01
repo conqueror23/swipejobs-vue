@@ -29,9 +29,7 @@ export default {
 .bold {
   font-weight: bold;
 }
-/* .card img {
-  width: 70%;
-} */
+/* media selector to fix issues with flexbox and bootstrap gap  */
 @media screen and (max-width: 270px) {
   .card img {
     height: 70%;

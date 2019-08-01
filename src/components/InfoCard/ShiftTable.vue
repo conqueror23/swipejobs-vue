@@ -17,6 +17,7 @@ export default {
   name: "shiftTables",
   props: ["formatDate"],
   computed: {
+    // only display following 5 days of work start time
     weekshift: function() {
       let weekshift = [];
       this.formatDate.filter((value, key) => {

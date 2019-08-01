@@ -68,16 +68,19 @@ export default {
     };
   },
   computed: {
+    //calculate salary of this job in 2 decimals 
     hourRate: function() {
       let hourRate = this.jobInfo.wagePerHourInCents / 100;
       return hourRate.toFixed(2);
     },
+    // get the working period of currenty job
      workPeriod: function() {
       let firstDay = this.formatDate[0].format("ddd,  MMM D");
       let length = this.formatDate.length - 1;
       let lastDay = this.formatDate[length].format("ddd,  MMM D");
       return firstDay + " - " + lastDay;
     },
+    // transfer date to pst time 
     formatDate: function() {
       let formatedDate = this.jobInfo.shifts.map(value => {
         let output = moment(value.startDate)
