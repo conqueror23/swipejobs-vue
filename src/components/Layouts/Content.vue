@@ -1,6 +1,6 @@
 <template>
   <div id="content">
-    <div :key="job" v-for="job in JobsInfo">
+    <div  v-for="job in JobsInfo">
       <InfoCard v-bind:jobInfo="job" />
     </div>
   </div>

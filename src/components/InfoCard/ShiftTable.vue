@@ -1,9 +1,9 @@
 <template>
   <div>
     <h3>If you take this job you are agreeing to work ALL DAYS.</h3>
-    <table id="shift-table" :key="day" v-for="day in weekshift">
+    <table id="shift-table"  v-for="day in weekshift">
       <tr>
-        <td v-for="attr in day.split(' ')" :key="attr">
+        <td v-for="attr in day.split(' ')" >
           <p id="week-shift" class="gray-font">{{attr}}</p>
         </td>
       </tr>

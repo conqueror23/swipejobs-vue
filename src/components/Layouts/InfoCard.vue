@@ -1,11 +1,11 @@
 <template>
   <b-container>
     <b-card light tag="article" >
-      <b-row>
+      <b-row id="company-info-row">
         <b-col class="company-info">
           <b-card-img :src="this.company.logo"></b-card-img>
         </b-col>
-        <b-col col='2'>
+        <b-col >
           <b-card-text>
             <h4>{{this.jobInfo.title}}</h4>
             <h5 class="gray-font">{{this.company.name}}</h5>
@@ -68,7 +68,7 @@ export default {
     };
   },
   computed: {
-    //calculate salary of this job in 2 decimals 
+    //calculate salary of this job in 2 decimals
     hourRate: function() {
       let hourRate = this.jobInfo.wagePerHourInCents / 100;
       return hourRate.toFixed(2);
@@ -80,7 +80,7 @@ export default {
       let lastDay = this.formatDate[length].format("ddd,  MMM D");
       return firstDay + " - " + lastDay;
     },
-    // transfer date to pst time 
+    // transfer date to pst time
     formatDate: function() {
       let formatedDate = this.jobInfo.shifts.map(value => {
         let output = moment(value.startDate)
@@ -90,7 +90,7 @@ export default {
       });
       return formatedDate;
     },
-   
+
   }
 };
 </script>
@@ -106,6 +106,16 @@ export default {
 }
 .company-info h5 {
   line-height: 1em;
+}
+
+#company-info-row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+#company-info-row b-col{
+  width: 50%;
+
 }
 .company-buttons {
   display: inline-flex;
